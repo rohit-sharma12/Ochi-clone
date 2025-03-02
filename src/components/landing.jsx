@@ -1,15 +1,16 @@
+import { motion } from "framer-motion";
 import { MdOutlineArrowOutward } from "react-icons/md";
 
 const Landing = () => {
     return (
-        <div className="h-screen w-full pt-1">
+        <div data-scroll data-scroll-section data-scroll-speed="-.3" className="h-screen w-full pt-1">
             <div className="px-20 mt-40 textstructure">
                 {["We Create", "Eye Opening", "Presentation"].map((item, index) => {
                     return (
-                        <div className="masker">
+                        <div key={index} className="masker">
                             <div className="w-fit flex items-end overflow-hidden">
                                 {index === 1 && (
-                                    <div className="mr-[1vw] w-[8vw] h-[6vw] top-[1.2vw] rounded-md relative bg-green-500"></div>
+                                    <motion.div initial={{ width: 0 }} animate={{ width: "9vw" }} transition={{ ease: [0.76, 0, 0.24, 1], duration: 1.2 }} className="mr-[1vw] w-[8vw] h-[6vw] top-[1.2vw] rounded-md relative bg-green-500"></motion.div>
                                 )}
                                 <h1 key={index} className="text-[7vw] text-zinc-900 uppercase font-bold leading-[5.8vw] tracking-tighter">{item}</h1>
                             </div>
